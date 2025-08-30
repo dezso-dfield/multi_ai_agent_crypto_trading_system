@@ -1,0 +1,8 @@
+services:
+  macats:
+    build: .
+    image: macats:latest
+    env_file:
+      - .env
+    command: ["python2", "main.py"]
+    restart: unless-stopped
