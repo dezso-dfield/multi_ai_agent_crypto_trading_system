@@ -111,7 +111,7 @@ class FSVZOScannerAgent:
     def __init__(self, bus: EventBus, params: FSVZOParams | None = None):
         self.bus = bus
         self.params = params or FSVZOParams()
-        self.universe: List[str] = [s.strip() for s in getattr(SETTINGS, "universe", "BTC/USDT,ETH/USDT,SOL/USDT,BNB/USDT,XRP/USDT").split(",")]
+        self.universe: List[str] = [s.strip() for s in getattr(SETTINGS, "universe", "BTC/USDT,ETH/USDT,SOL/USDT,BNB/USDT,XRP/USDT,ADA/USDT,DOGE/USDT,AVAX/USDT,DOT/USDT,MATIC/USDT,TRX/USDT,LINK/USDT,ATOM/USDT,LTC/USDT,UNI/USDT,ETC/USDT,XMR/USDT,APT/USDT,ARB/USDT,NEAR/USDT,OP/USDT,HBAR/USDT,ICP/USDT,FIL/USDT,STX/USDT,SUI/USDT,ALGO/USDT,VET/USDT,MKR/USDT,GRT/USDT,SAND/USDT,AXS/USDT,AAVE/USDT,RUNE/USDT,THETA/USDT,EGLD/USDT,KAVA/USDT,INJ/USDT,CRV/USDT,FTM/USDT,DYDX/USDT,LDO/USDT,GMX/USDT,ENS/USDT,CHZ/USDT,COMP/USDT,1INCH/USDT,BAL/USDT,ZIL/USDT,FLR/USDT").split(",")]
         self.exchange_id = SETTINGS.exchange_id
         self.interval = SETTINGS.timeframe
         self.lookback = "7d"

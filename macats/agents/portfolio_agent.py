@@ -101,7 +101,7 @@ class PortfolioAgent:
         pos: Position,
     ) -> None:
         row = {
-            "ts": int(time.time()),
+            "ts": time.time(),
             "symbol": symbol,
             "side": side,
             "qty": float(qty),
@@ -118,7 +118,7 @@ class PortfolioAgent:
     def _write_equity_row(self) -> None:
         equity, unrealized, realized_total, gross = self._mark_to_market()
         row = {
-            "ts": int(time.time()),
+            "ts": time.time(),
             "equity": float(equity),
             "cash": float(self.state.cash),
             "unrealized": float(unrealized),
