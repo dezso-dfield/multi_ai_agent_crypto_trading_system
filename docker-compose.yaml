@@ -1,8 +1,10 @@
 services:
   macats:
-    build: .
+    build:
+      context: .        # project root
+      dockerfile: Dockerfile
     image: macats:latest
     env_file:
       - .env
-    command: ["python2", "main.py"]
+    command: ["python3", "main.py"]
     restart: unless-stopped
